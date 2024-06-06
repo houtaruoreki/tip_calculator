@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p>SPLI<br>TTER</p>
+
+  <div class="container">
+    <div class="left">
+      <label for="billInput">Bill</label>
+      <!-- ჩასასმელია დოლარის ლოგო -->
+      <input id="billInput">
+      <label>Select Tip %</label>
+      <div class="tipGrid">
+        <button onclick="calculateTip(0.05)">5%</button>
+        <button onclick="calculateTip(0.1)">10%</button>
+        <button onclick="calculateTip(0.15)">15%</button>
+        <button onclick="calculateTip(0.25)">25%</button>
+        <button onclick="calculateTip(0.5)">50%</button>
+        <input placeholder="Custom" onchange="custom_tip()">
+      </div>
+      <label>Number of People</label>
+      <!-- ჩასასმელია ადამიანის ლოგო -->
+      <input id="people">
+    </div>
+    <div class="right">
+      <div class="tipContainer">
+        <div class="tipInfo">
+          <p>Tip Amount</p>
+          <span id="tipPerPerson">$</span>
+        </div>
+        <div class="tipInfo">
+          <p>Total</p>
+          <span id="totalPerPerson">$</span>
+        </div>
+      </div>
+      
+      <button id="resetBtn" onclick="reset()">RESET</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

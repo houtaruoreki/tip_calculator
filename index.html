@@ -2,50 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&family=Roboto:wght@100;300;400&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="./main.js" defer></script>
+  <title>Tip Calculator Project</title>
 </head>
 <body>
-  <p>SPLI<br>TTER</p>
-
-  <div class="container">
-    <div class="left">
-      <label for="billInput">Bill</label>
-      <!-- ჩასასმელია დოლარის ლოგო -->
-      <input id="billInput">
-      <label>Select Tip %</label>
-      <div class="tipGrid">
-        <button onclick="calculateTip(0.05)">5%</button>
-        <button onclick="calculateTip(0.1)">10%</button>
-        <button onclick="calculateTip(0.15)">15%</button>
-        <button onclick="calculateTip(0.25)">25%</button>
-        <button onclick="calculateTip(0.5)">50%</button>
-        <input placeholder="Custom" onchange="custom_tip()">
-      </div>
-      <label>Number of People</label>
-      <!-- ჩასასმელია ადამიანის ლოგო -->
-      <input id="people">
-    </div>
-    <div class="right">
-      <div class="tipContainer">
-        <div class="tipInfo">
-          <p>Tip Amount</p>
-          <span id="tipPerPerson">$</span>
-        </div>
-        <div class="tipInfo">
-          <p>Total</p>
-          <span id="totalPerPerson">$</span>
-        </div>
-      </div>
-      
-      <button id="resetBtn" onclick="reset()">RESET</button>
-    </div>
+  <div>
+    <img class="splitter" src="/asset/SPLITTER.svg" alt="splitter">
   </div>
 
-  <script src="main.js"></script>
+  <div class="container">
+    <div class="left-side">
+
+      <div class="bill">
+        <div class="bill-cant">
+          <h2 class="bill-p">Bill</h2>
+          <span class="redline1 errors" style="display: none;">Can’t be zero</span>
+        </div>
+        <div class="inpus-logo">
+          <img class="logos" src="/asset/$.svg" alt="">
+          <input class="bill-input inputs" type="number" placeholder="0">
+        </div>
+      </div>
+
+      <div class="select-tip">
+        <p class="select-tip-p">Select tip %</p>
+        <div class="container-perc">
+          <div class="perc">5%</div>
+          <div class="perc">10%</div>
+          <div class="perc">15%</div>
+          <div class="perc">25%</div>
+          <div class="perc">50%</div>
+          <input class="custom-perc inputs" type="number" placeholder="Custom">
+        </div>
+      </div>
+
+      <div class="num-of-people">
+       <div class="people-cant">
+        <h2 class="numof-p">Number of People</h2>
+        <span class="redline2 errors" style="display: none;">Can’t be zero</span> 
+      </div>
+        <div class="inpus-logo logosbord2">
+          <img class="logos" src="/asset/Combined Shape.svg" alt="">
+          <input class="numof-input inputs" type="number" placeholder="0">
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="tip-amount-box same">
+        <div id="box1-left">
+        <p class="tip-amount-p box-p">Tip amount</p>
+        <p class="person-p">/ person</p>
+      </div>
+        <div id="dollars">
+          <p class="tip-amount-dollar tipam tt">$0.00</p>
+        </div>
+      </div>
+
+      <div class="total-box same">
+        <div id="box2-left">
+          <p class="total-p box-p">total</p>
+          <p class="person-p">/ person</p>
+        </div>
+        <div id="dollars2">
+          <p class="total-dollar tot tt">$0.00</p>
+        </div>
+      </div>
+      <button class="button">RESET</button>
+    </div>
+  </div>
 </body>
 </html>
